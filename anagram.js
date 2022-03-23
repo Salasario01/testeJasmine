@@ -1,10 +1,3 @@
-// function isAnagrama(str1,str2){
-//     str1 = str1.toString().toLowerCase().split('').sort('').join('');
-//     str2 = str2.toString().toLowerCase().split('').sort('').join('');
-//     return str1 === str2;
-
-// }
-// module.exports = isAnagrama;
 function isAnagram(str1,str2){//camelCase
     str1 = str1.toString().toReplace('.','').toLowerCase().split('').sort().join(''); 
     str2 = str2.toString().toReplace('.','').toLowerCase().split('').sort().join('');
