@@ -90,3 +90,81 @@ describe("Suite de testes dp toBe", function(){
            expect("false").toBeFalsy();
            });
            });
+           //toContain
+            describe("suite de testes toContain",function(){
+            var nomes = ["Fulano", "Ciclano", "Beltrano"];
+            var nomesTexto = "Fulano Ciclano Beltrano";
+            it ("deve validar o uso do matcher 'toContain'",function(){
+            expect(nomes).toContain("Ciclano");
+            expect(nomesTexto).toContain("Funlano");
+            expect(nomesTexto).toContain("Bel"); 
+            expect(nomes).not.toContain("Maria");
+            expect(nomes).not.toContain("ciclano");
+            });
+            });
+            //toBeLessThan
+            describe("Suite de testes do toBeLessThan",function (){
+            const PI = 3.1415;
+            var numero = 2;
+            it("deve validar o uso do matcher 'toBeLessThan'", function(){
+            expect(numero).toBeLessThan(PI);
+            expect("1,2").toBeLessThan(PI);
+            expect(5).not.toBeLessThan(PI);
+            expect(PI).not.toBeLessThan(PI);
+            });
+            });
+            //toBeGreaterThan
+            describe("Suite de testes do toBeGreaterThan", function(){
+            const PI = 3.1415;
+            var numero = 4;
+            it("deve validar o uso do matcher 'toBeGreaterThan' ",function(){
+            expect(numero).toBeGreaterThan(PI);
+            expect("3,2").toBeGreaterThan(PI);
+            expect(2).not.toBeGreaterThan(PI);
+            expect(PI).not.toBeGreaterThan(PI);
+            });
+            });
+            //toThrow
+            describe("Suite de testes do toThrow", function(){
+            var comErro = function(){
+            return numero = 10;
+            };   
+            var semErro = function(numero){
+            return numero = 10;
+            };
+            it("deve validar o uso do matcher 'toThrow'", function(){
+            expect(comErro).toThrow();
+            expect(semErro).not.toThrow();
+            });
+            });
+            //toThrowError
+            describe("suite de testes do tópico 5.13", function(){
+            var calcularDobro = function(numero){
+            if(numero <= 0) {
+            throw new TypeError("O número deve ser maior que 0.");
+            }
+            return numero * numero;
+            };
+            it("deve validar o uso do matcher 'toThrowError'" ,function() {
+            expect(function() { calcularDobro(0)})
+            .toThrowError();
+            expect(function() { calcularDobro(0)})
+            .toThrowError("O numero deve ser maior que 0.");
+            expect(function() { calcularDobro(0)})
+            .toThrowError(/maior que 0/);
+            expect(function() { calcularDobro(0)})
+            .toThrowError(TypeError);
+            expect(function() { calcularDobro(0)})
+            .toThrowError(TypeError,
+            "O numero deve ser maior que 0.");
+            expect(calcularDobro).not.toThrowError();
+            });
+            }); 
+            //falha Manual 
+              
+            
+            
+            
+            
+
+            
